@@ -79,7 +79,7 @@ const protectWorker = (req, res, next) => {
       ) {
         return res.status(403).json({message: "Access denied: not Worker!"});
         }
-
+        
         req.user = decoded;
         next();
       } catch (error) {

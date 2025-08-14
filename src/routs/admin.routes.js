@@ -1,0 +1,44 @@
+import express from "express";
+const router = express.Router();
+
+import {
+  loginAdmin,
+  createCategories,
+  getCategories,
+  createProduct,
+  getProducts,
+  getCategoryProducts,
+  createWorker,
+  getWorkers,
+  createTable,
+  getTables,
+  calculateWorkingHours,
+} from "../controllers/admin.controllers.js";
+
+import {protectAdmin} from "../middlewares/authMiddleware.js";
+import { kitchenDbMiddleware } from "../middlewares/kitchenMiddleware.js";
+
+//Admin login
+router.use("/login", loginAdmin);
+
+router.use(protectAdmin);
+router.use(kitchenDbMiddleware);
+
+router.post("/categories", createCategories);
+router.get("/categories", getCategories);
+router.get("/categories/:categoryId/products", getCategoryProducts);
+
+router.post("/products",createProduct);
+router.get("/products", getProducts);
+
+// Workers
+router.post("/workers", createWorker);
+router.get("/workers", getWorkers);
+
+// Tables
+router.post("/tables", createTable);
+router.get("/tables", getTables);
+
+router.get("/workers/:username/working-hours", calculateWorkingHours);
+
+export default router;
