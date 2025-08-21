@@ -7,7 +7,7 @@ import {
   createKitchenAdmin,
   getAllKitchens,
   getAllAdmins,
-} from "../controllers/superAdmin.controllers.js";
+} from "../controllers/superAdmin.controller.js";
 import { protectSuperAdmin } from "../middlewares/authMiddleware.js";
 
 router.post("/login", loginSuperAdmin);
@@ -15,7 +15,7 @@ router.post("/login", loginSuperAdmin);
 router.use(protectSuperAdmin);
 
 router.post("/kitchens", createKitchen);
-router.post("kitchens", getAllKitchens);
+router.get("kitchens", getAllKitchens);
 
 router.post("/admins", createKitchenAdmin);
 router.get("/admins", getAllAdmins);

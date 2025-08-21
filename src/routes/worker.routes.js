@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
-import { protectWorker } from "../middlewares/authMiddleware";
-import { kitchenDbMiddleware } from "../middlewares/kitchenMiddleware";
+import { protectWorker } from "../middlewares/authMiddleware.js";
+import { kitchenDbMiddleware } from "../middlewares/kitchenMiddleware.js";
 
 import {
   getTables,
@@ -27,3 +27,8 @@ router.get("/orders", getOrders);
 // Tables
 router.get("/tables", getTables);
 
+//Categories
+router.get("/categories", getCategories);
+router.get("/categories/:categoryId/products", getCategoryProducts);
+
+export default router;

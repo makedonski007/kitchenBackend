@@ -3,7 +3,7 @@ const router = express.Router();
 
 import {
   loginAdmin,
-  createCategories,
+  createCategory,
   getCategories,
   createProduct,
   getProducts,
@@ -24,7 +24,7 @@ router.use("/login", loginAdmin);
 router.use(protectAdmin);
 router.use(kitchenDbMiddleware);
 
-router.post("/categories", createCategories);
+router.post("/categories", createCategory);
 router.get("/categories", getCategories);
 router.get("/categories/:categoryId/products", getCategoryProducts);
 

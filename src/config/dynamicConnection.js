@@ -4,7 +4,7 @@ import CategorySchema from "../models/Admin/Category.js";
 import ProductSchema from "../models/Admin/Product.js";
 import WorkerSchema from "../models/Admin/Worker.js";
 import TableSchema from "../models/Admin/Table.js";
-import OrderSchema from "../models/Admin/Order";
+import OrderSchema from "../models/Admin/order.js";
 
 const connections = {};
 
