@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
-import { generateToken } from "../utils/generateToken";
-import Admin from "../models/SuperAdmin/Admin";
+import { generateToken } from "../utils/generateToken.js";
+import Admin from "../models/SuperAdmin/Admin.js";
 
 let Category;
 let Product;

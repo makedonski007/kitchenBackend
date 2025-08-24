@@ -13,7 +13,7 @@ const getKitchenDbConnection = async (kitchenId) => {
     throw new Error("Kitchen ID is required to connect");
   }
 
-  if(connections[kitchenId]){
+  if (connections[kitchenId]) {
     return connections[kitchenId];
   }
 
@@ -21,8 +21,8 @@ const getKitchenDbConnection = async (kitchenId) => {
   const conn = await mongoose.createConnection(
     `mongodb:127.0.0.1:27017/${kitchenDbName}`,
     {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
   );
 
@@ -38,4 +38,4 @@ const getKitchenDbConnection = async (kitchenId) => {
   return conn;
 };
 
-export {getKitchenDbConnection}
+export { getKitchenDbConnection }

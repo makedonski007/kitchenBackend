@@ -13,9 +13,9 @@ import {
   createTable,
   getTables,
   calculateWorkingHours,
-} from "../controllers/admin.controllers.js";
+} from "../controllers/admin.controller.js";
 
-import {protectAdmin} from "../middlewares/authMiddleware.js";
+import { protectAdmin } from "../middlewares/authMiddleware.js";
 import { kitchenDbMiddleware } from "../middlewares/kitchenMiddleware.js";
 
 //Admin login
@@ -28,7 +28,7 @@ router.post("/categories", createCategory);
 router.get("/categories", getCategories);
 router.get("/categories/:categoryId/products", getCategoryProducts);
 
-router.post("/products",createProduct);
+router.post("/products", createProduct);
 router.get("/products", getProducts);
 
 // Workers
